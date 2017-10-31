@@ -206,7 +206,7 @@ function getAllProjects() {
     // Derive prioritization
     else {
       //derive if project should get gsb level prioritization
-      if (proj.forcePrioritization == "Yes" || levelHigherThan(proj.effort, 'Low') || levelHigherThan(proj.nonCompCost, 'Low')){proj.gsbPrioFlag = true}
+      if (proj.forceGsbPrioritization == "Yes" || levelHigherThan(proj.effort, 'Low') || levelHigherThan(proj.nonCompCost, 'Low')){proj.gsbPrioFlag = true}
 
       // Determine inconsistency
 
@@ -223,7 +223,7 @@ function getAllProjects() {
         }
 
         // Check Force Prioritization.
-        if (proj.forcePrioritization == "Yes") {
+        if (proj.forceGsbPrioritization == "Yes") {
           proj.inconsistencyErrors.push("Force prioritization is selected, but it is not set to be GSB prioritized.");
         }
       }
